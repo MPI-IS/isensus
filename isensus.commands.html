@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>isensus.commands package &mdash; isensus  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> isensus
+          </a>
+              <div class="version">
+                v0.1b
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="author_and_copyright.html">Author and licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">isensus</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>isensus.commands package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/isensus.commands.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="isensus-commands-package">
+<h1>isensus.commands package<a class="headerlink" href="#isensus-commands-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-isensus.commands.commands">
+<span id="isensus-commands-commands-module"></span><h2>isensus.commands.commands module<a class="headerlink" href="#module-isensus.commands.commands" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-isensus.commands.create">
+<span id="isensus-commands-create-module"></span><h2>isensus.commands.create module<a class="headerlink" href="#module-isensus.commands.create" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.create.create">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.create.</span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">firstname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lastname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User"><span class="pre">isensus.data.user.User</span></a></span></span><a class="headerlink" href="#isensus.commands.create.create" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a new user to the database</p>
+<p>Reads the data from the json file and if not user of the same
+userid exists, adds a new instance of User to it (with reasonable
+defaults attributes values)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>userid</strong> (<em>str</em>) – userid, as entered in ldap</p></li>
+<li><p><strong>firstname</strong> (<em>str</em>) – first name of the user</p></li>
+<li><p><strong>lastname</strong> (<em>str</em>) – last name of the user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance corresponding of the added user.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="isensus.errors.html#isensus.errors.existing_user.ExistingUserError" title="isensus.errors.existing_user.ExistingUserError"><strong>ExistingUserError</strong></a> – if a user with the provided userid already exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands.delnote">
+<span id="isensus-commands-delnote-module"></span><h2>isensus.commands.delnote module<a class="headerlink" href="#module-isensus.commands.delnote" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.delnote.delnote">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.delnote.</span></span><span class="sig-name descname"><span class="pre">delnote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usertip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User"><span class="pre">isensus.data.user.User</span></a></span></span><a class="headerlink" href="#isensus.commands.delnote.delnote" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a user’s note</p>
+<p>Reads the data from the json file and find the user corresponding
+to the usertip. Then remove the entry corresponding to
+the user’s note at the given index.
+Return the instance of User that has been updated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usertip</strong> (<em>str</em>) – First letters of the user’s userid, lastname or firstname</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – index of warnings or the notes to remove</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance of the updated user after update</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands.delwarning">
+<span id="isensus-commands-delwarning-module"></span><h2>isensus.commands.delwarning module<a class="headerlink" href="#module-isensus.commands.delwarning" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.delwarning.delwarning">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.delwarning.</span></span><span class="sig-name descname"><span class="pre">delwarning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usertip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User"><span class="pre">isensus.data.user.User</span></a></span></span><a class="headerlink" href="#isensus.commands.delwarning.delwarning" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a user’s warning</p>
+<p>Reads the data from the json file and find the user corresponding
+to the usertip. Then remove the entry corresponding to
+the user’s warning at the given index.
+Return the instance of User that has been updated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usertip</strong> (<em>str</em>) – First letters of the user’s userid, lastname or firstname</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – index of warnings or the notes to remove</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance of the updated user after update</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands.list">
+<span id="isensus-commands-list-module"></span><h2>isensus.commands.list module<a class="headerlink" href="#module-isensus.commands.list" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.list.list">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.list.</span></span><span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#isensus.commands.list.list" title="Permalink to this definition"></a></dt>
+<dd><p>Print the list of users included in the database</p>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands.remove">
+<span id="isensus-commands-remove-module"></span><h2>isensus.commands.remove module<a class="headerlink" href="#module-isensus.commands.remove" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.remove.remove">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.remove.</span></span><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usertip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#isensus.commands.remove.remove" title="Permalink to this definition"></a></dt>
+<dd><p>Removes a user from the database.</p>
+<p>Reads data from the json file, find the corresponding
+user and removes it from the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>usertip</strong> (<em>str</em>) – First letters of the user’s userid, lastname or firstname</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance of the removed user</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands.rm">
+<span id="isensus-commands-rm-module"></span><h2>isensus.commands.rm module<a class="headerlink" href="#module-isensus.commands.rm" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.rm.rm">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.rm.</span></span><span class="sig-name descname"><span class="pre">rm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usertip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><s><span class="pre">'warnings'</span></s><span class="p"><span class="pre">,</span></span><span class="w"> </span><s><span class="pre">'notes'</span></s><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User"><span class="pre">isensus.data.user.User</span></a></span></span><a class="headerlink" href="#isensus.commands.rm.rm" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a user’s warning or note</p>
+<p>Reads the data from the json file and find the user corresponding
+to the usertip. Then remove the entry corresponding to
+the attribute (warnings or note) at the given index.
+Return the instance of User that has been updated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usertip</strong> (<em>str</em>) – First letters of the user’s userid, lastname or firstname</p></li>
+<li><p><strong>attribute</strong> (<em>str</em>) – should be of the value “warnings” or “notes”</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – index of warnings or the notes to remove</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance of the updated user after update</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands.set">
+<span id="isensus-commands-set-module"></span><h2>isensus.commands.set module<a class="headerlink" href="#module-isensus.commands.set" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.set.set">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.set.</span></span><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usertip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User"><span class="pre">isensus.data.user.User</span></a></span></span><a class="headerlink" href="#isensus.commands.set.set" title="Permalink to this definition"></a></dt>
+<dd><p>Set a users’s attribute value</p>
+<p>Reads the data from the json file, find the user corresponding
+to the usertip, and set the attribute of the user to the
+given value (after casting to proper type). May raise
+various exception (e.g. ValueError, UserNotFoundError, etc).
+The attributes warnings and notes are a bit special: the value
+is added to the attribute (and not set to the attribute).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usertip</strong> (<em>str</em>) – First letters of the user’s userid, lastname or firstname</p></li>
+<li><p><strong>attribute</strong> (<em>str</em>) – name of the attribute to update</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – string representation of the value the attribute should take</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance of the updated user after update</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands.show">
+<span id="isensus-commands-show-module"></span><h2>isensus.commands.show module<a class="headerlink" href="#module-isensus.commands.show" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.show.show">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.show.</span></span><span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usertip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User"><span class="pre">isensus.data.user.User</span></a></span></span><a class="headerlink" href="#isensus.commands.show.show" title="Permalink to this definition"></a></dt>
+<dd><p>Print all the value of all attributes of a specific user</p>
+<p>Reads data from the json file, find the user
+corresponding to the usertip, and print the
+related attributes values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>usertip</strong> (<em>str</em>) – First letters of the user’s userid, lastname or firstname</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance of the updated user after update</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-isensus.commands">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-isensus.commands" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Max Planck Society.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
