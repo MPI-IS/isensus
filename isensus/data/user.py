@@ -83,8 +83,8 @@ class User:
     is_snipe_cleared: bool = False
     closure_mail_sent: bool = False
     contract: Contract = None
-    contract_start: Date = Date(None)
-    contract_end: Date = Date(None)
+    contract_start: Date = Date("")
+    contract_end: Date = Date("")
     title: Title = None
     employee_id: int = None
     warnings: Warnings = Warnings("")
@@ -138,7 +138,7 @@ class User:
         return instance
 
     @classmethod
-    def _user_from_json(cls, from_json: typing.Dict[str, typing.Any]):
+    def _user_from_json(cls, from_json: typing.Dict[str, str]):
         """
         Returns an instance of User from a (decoded) json dictionary.
         """
@@ -187,7 +187,7 @@ class User:
         }
 
     @classmethod
-    def to_json(cls, users: typing.Dict[str, object]) -> str:
+    def to_json(cls, users: typing.Dict[str, object]) -> object:
         """ Encode a user database dictionary into json encoder format
 
         Users being a dictionary which keys are userids and
@@ -269,7 +269,7 @@ class User:
         )
 
     @staticmethod
-    def find_user(users: typing.Dict[str, object], usertip: str) -> object:
+    def find_user(users: typing.Dict[str,object], usertip: str) -> object:
         """ Search for the user corresponding to the usertip
 
         Returns the user corresponding to the usertip (see 

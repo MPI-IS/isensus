@@ -14,7 +14,7 @@ class ListAttribute:
     separator: str = "<br>"
 
     def __init__(self, content: str):
-        self._items: typing.Sequence[str] = content.split(self.separator)
+        self._items: typing.List[str] = content.split(self.separator)
 
     def rm(self, index: int):
         """ Delete the value at the specified index
