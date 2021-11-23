@@ -46,3 +46,19 @@ def test_create_command(test_data_file):
         assert users[userid].userid == str(userid)
         assert users[userid].firstname == firstname
         assert users[userid].lastname == lastname
+
+
+def test_remove_command(test_data_file):
+    """
+    Test the remove command
+    """
+
+    data_path = test_data_file
+
+    with isensus.Data(path=data_path) as users:
+        assert "bmarley" in users.keys()
+
+    commands["remove"]("bmarley", path=data_path)
+
+    with isensus.Data(path=data_path) as users:
+        assert "bmarley" not in users.keys()

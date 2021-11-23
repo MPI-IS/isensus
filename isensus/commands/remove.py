@@ -1,9 +1,9 @@
 from pathlib import Path
-from ..data import Data
-from ..default import default_path
+from ..data import Data, User
+from ..defaults import default_path
 
 
-def remove(usertip: str, path: Path = default_path) -> object:
+def remove(usertip: str, path: Path = default_path) -> User:
     """ Removes a user from the database.
 
     Reads data from the json file, find the corresponding

@@ -298,7 +298,7 @@ class User:
         """
 
         candidates = [
-            userid for userid, instance in users.items if instance.maybe_me(usertip)
+            userid for userid, instance in users.items() if instance.maybe_me(usertip)
         ]
 
         if not candidates:
