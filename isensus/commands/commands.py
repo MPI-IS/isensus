@@ -7,6 +7,7 @@ from .set import set
 from .show import show
 from .delnote import delnote
 from .delwarning import delwarning
+from .remove import remove
 
 """
 Dictionary having as values all the commands that
@@ -19,4 +20,5 @@ commands: typing.Dict[str, typing.Callable] = {
     "create": create,
     "set": set,
     "show": show,
+    "remove": remove,
 }
