@@ -178,8 +178,30 @@ Return the instance of User that has been updated.</p>
 </dd></dl>
 
 </section>
-<section id="isensus-commands-remove-module">
-<h2>isensus.commands.remove module<a class="headerlink" href="#isensus-commands-remove-module" title="Permalink to this headline"></a></h2>
+<section id="module-isensus.commands.remove">
+<span id="isensus-commands-remove-module"></span><h2>isensus.commands.remove module<a class="headerlink" href="#module-isensus.commands.remove" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="isensus.commands.remove.remove">
+<span class="sig-prename descclassname"><span class="pre">isensus.commands.remove.</span></span><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usertip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('/home/runner/.isensus')</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User"><span class="pre">isensus.data.user.User</span></a></span></span><a class="headerlink" href="#isensus.commands.remove.remove" title="Permalink to this definition"></a></dt>
+<dd><p>Removes a user from the database.</p>
+<p>Reads data from the json file, find the corresponding
+user and removes it from the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usertip</strong> (<em>str</em>) – First letters of the user’s userid, lastname or firstname</p></li>
+<li><p><strong>path</strong> (<em>Path</em><em> (</em><em>optional</em><em>)</em>) – absolute path to datafile (default to ~/.isensus)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>user</strong> – Instance of the removed user</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="isensus.data.html#isensus.data.user.User" title="isensus.data.user.User">User</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-isensus.commands.rm">
 <span id="isensus-commands-rm-module"></span><h2>isensus.commands.rm module<a class="headerlink" href="#module-isensus.commands.rm" title="Permalink to this headline"></a></h2>
