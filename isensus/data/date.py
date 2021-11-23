@@ -45,7 +45,7 @@ class Date:
             return "Not set"
 
     @classmethod
-    def _from_string(cls, date: str) -> datetime.datetime:
+    def _from_string(cls, date: str) -> object:
         if date is None or not date:
             return cls("")
         try:

@@ -14,7 +14,7 @@ class AmbiguousUserError(Exception):
     """
 
     def __init__(self, usertip: str, candidates: typing.Sequence[str]):
-        self._tip = tip
+        self._tip = usertip
         self._candidates = ", ".join(candidates)
 
     def __str__(self):
