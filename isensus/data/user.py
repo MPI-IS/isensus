@@ -269,7 +269,7 @@ class User:
         )
 
     @staticmethod
-    def find_user(users: typing.Dict[str,object], usertip: str) -> object:
+    def find_user(users: typing.Dict[str, object], usertip: str) -> object:
         """ Search for the user corresponding to the usertip
 
         Returns the user corresponding to the usertip (see 

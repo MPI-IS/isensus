@@ -17,7 +17,10 @@ def test_data_file(request, scope="function"):
     path: Path
       absolute path to the temporary file
     """
-    data = {"bmarley": {"userid": "bmarley", "firstname": "Bob", "lastname": "Marley"}}
+    data = {
+        "bmarley": {"userid": "bmarley", "firstname": "Bob", "lastname": "Marley"},
+        "bmarlow": {"userid": "bmarlow", "firstname": "Benjamin", "lastname": "Marlow"},
+    }
     f = tempfile.NamedTemporaryFile()
     p: pathlib.Path = pathlib.Path(f.name)
     with open(p, "w") as w:
@@ -62,3 +65,15 @@ def test_remove_command(test_data_file):
 
     with isensus.Data(path=data_path) as users:
         assert "bmarley" not in users.keys()
+
+
+def test_ambiguous_user(test_data_file):
+    """
+    Test an AmbiguousUserError is raised
+    when usertip is under specified
+    """
+
+    data_path = test_data_file
+
+    with pytest.raises(isensus.AmbiguousUserError):
+        commands["remove"]("bmar", path=data_path)
