@@ -187,7 +187,7 @@ class User:
         }
 
     @classmethod
-    def to_json(cls, users: typing.Dict[str, cls]) -> str:
+    def to_json(cls, users: typing.Dict[str, object]) -> object:
         """ Encode a user database dictionary into json encoder format
 
         Users being a dictionary which keys are userids and
@@ -269,7 +269,7 @@ class User:
         )
 
     @staticmethod
-    def find_user(cls,users: typing.Dict[str,cls], usertip: str) -> cls:
+    def find_user(users: typing.Dict[str,object], usertip: str) -> object:
         """ Search for the user corresponding to the usertip
 
         Returns the user corresponding to the usertip (see 
