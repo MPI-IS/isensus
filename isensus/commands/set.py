@@ -1,4 +1,6 @@
 from pathlib import Path
+from isensus.data.notes import Notes
+from isensus.data.warnings import Warnings
 from isensus.data.list_attribute import ListAttribute
 from isensus.data.data import Data
 from isensus.data.user import User
@@ -35,14 +37,17 @@ def set(usertip: str, attribute: str, value: str, path: Path = default_path) -> 
     with Data(path=path) as users:
         user = User.find_user(users, usertip)
         attr_type = User.get_type(attribute)
-        # attribute is not warnings or notes :
-        # setting the value
-        if not isinstance(attr_type, ListAttribute):
+        if not attr_type in (Notes,Warnings):
             setattr(user, attribute, attr_type(value))
+            return
         # attribute is warnings or notes :
         # adding the value to the already existing
         # values
         current = repr(getattr(user, attribute))
-        setattr(user, attribute, current + "\n" + value)
-
+        if not current:
+            new_value = value
+        else:
+            new_value = current + ListAttribute.separator + value
+        setattr(user, attribute, new_value)
+        
     return user

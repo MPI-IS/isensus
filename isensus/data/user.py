@@ -262,9 +262,9 @@ class User:
         """
         return any(
             (
-                self.userid.startswith(usertip),
-                self.firstname.startswith(usertip),
-                self.lastname.startswith(usertip),
+                self.userid.lower().startswith(usertip.lower()),
+                self.firstname.lower().startswith(usertip.lower()),
+                self.lastname.lower().startswith(usertip.lower()),
             )
         )
 
@@ -293,7 +293,7 @@ class User:
         ------
         UserNotFoundError:
             If no corresponding user is found.
-        AmbiguousUserErrorL
+        AmbiguousUserError
             If more than one user is found.
         """
 
