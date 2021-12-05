@@ -222,6 +222,21 @@ single string separated by a &lt;br&gt; separator.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="isensus.data.list_attribute.ListAttribute.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#isensus.data.list_attribute.ListAttribute.get" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the item at the specified index,
+or raises an IndexError.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – index of the entry to return</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>IndexError</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="isensus.data.list_attribute.ListAttribute.rm">
 <span class="sig-name descname"><span class="pre">rm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#isensus.data.list_attribute.ListAttribute.rm" title="Permalink to this definition"></a></dt>
 <dd><p>Delete the value at the specified index</p>
@@ -653,7 +668,7 @@ starts with usertip)</p>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>UserNotFoundError:</strong> – If no corresponding user is found.</p></li>
-<li><p><strong>AmbiguousUserErrorL</strong> – If more than one user is found.</p></li>
+<li><p><a class="reference internal" href="isensus.errors.html#isensus.errors.ambiguous_user.AmbiguousUserError" title="isensus.errors.ambiguous_user.AmbiguousUserError"><strong>AmbiguousUserError</strong></a> – If more than one user is found.</p></li>
 </ul>
 </dd>
 </dl>
