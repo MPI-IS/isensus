@@ -28,7 +28,7 @@ def delnote(usertip: str, index: int, path: Path = default_path) -> User:
         Instance of the updated user after update
     """
     with Data(path=path) as users:
-        user = User.find_user(users)
-        getattr(user, "note").rm(index)
+        user = User.find_user(users,usertip)
+        getattr(user, "notes").rm(index)
 
     return user

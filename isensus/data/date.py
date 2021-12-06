@@ -45,13 +45,13 @@ class Date:
             return "Not set"
 
     @classmethod
-    def _from_string(cls, date: str) -> object:
+    def _from_string(cls, date: str) -> datetime.datetime:
         if date is None or not date:
-            return cls("")
+            return None
         try:
             instance: datetime.datetime = datetime.datetime.strptime(
                 date, cls.str_format
             )
         except ValueError:
             raise ValueError(str("date should be of format YEAR-MONTH-DAY"))
-        return cls(instance)
+        return instance

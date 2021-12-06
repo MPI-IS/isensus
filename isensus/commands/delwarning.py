@@ -28,7 +28,7 @@ def delwarning(usertip: str, index: int, path: Path = default_path) -> User:
         Instance of the updated user after update
     """
     with Data(path=path) as users:
-        user = User.find_user(users)
+        user = User.find_user(users,usertip)
         getattr(user, "warnings").rm(index)
 
     return user

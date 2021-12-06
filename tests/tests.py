@@ -93,7 +93,10 @@ def test_maybe_me():
 
 
 def test_find_user():
-
+    """
+    Test for the find_user method of User
+    """
+    
     users = {
         "emarlon": isensus.User.create_new("emarlon","Etienne","Marlon"),
         "emarlone": isensus.User.create_new("emarlone","Elody","Marlon"),
@@ -118,7 +121,12 @@ def test_find_user():
 
     
 def test_notes_and_warnings(test_data_file):
-
+    """
+    Test for the commands 'set' applied to the attributes 
+    "notes" and "warnings", all well as for the commands
+    'delnote' and 'delwarning'
+    """
+    
     data_path = test_data_file
 
     notes = (
@@ -151,8 +159,40 @@ def test_notes_and_warnings(test_data_file):
         with pytest.raises(IndexError):
             user.warnings.get(3)
 
+    commands["delnote"]("bmarley",0,path=data_path)
+    commands["delwarning"]("bmarley",1,path=data_path)
+
+    with isensus.Data(path=data_path) as users:
+
+        user = isensus.User.find_user(users,"bmarley")
+
+        with pytest.raises(IndexError):
+            user.notes.get(1)
         
-        
-        
+        with pytest.raises(IndexError):
+            user.warnings.get(1)
+
+        assert user.notes.get(0) == notes[1]
+        assert user.warnings.get(0) == warnings[0]
+
     
+def test_date(test_data_file):
+    """
+    Testing the 'set' commands applied to Date
+    attributes.
+    """
+    
+    data_path = test_data_file
+    
+    right_format = "2011-07-12"
+    wrong_format = "2011/07/12"
+
+    with pytest.raises(ValueError):
+        commands["set"]("bmarley","contract_start",wrong_format,path=data_path)
+
+    commands["set"]("bmarley","contract_end",right_format,path=data_path)
+
+    with isensus.Data(path=data_path) as users:
+        user = isensus.User.find_user(users,"bmarley")
+        assert str(user.contract_end) == right_format
 
