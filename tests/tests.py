@@ -196,3 +196,29 @@ def test_date(test_data_file):
         user = isensus.User.find_user(users,"bmarley")
         assert str(user.contract_end) == right_format
 
+def test_bool_warnings():
+
+    user : isensus.User = isensus.User.create_new("abob","anton","bob")
+    
+    ldap_warnings = (
+        "form_not_sent",
+        "no_mail_account_or_forwarder",
+        "no_title",
+        "no_contract_type",
+        "no_contract_end"
+    )
+
+    # these warnings are supposed to return None
+    # if ldap has not been set yet.
+    assert not user.ldap # sanity check: we did not set any value to ldap
+    for ldap_warning in ldap_warnings:
+        instance : isensus.IWarning = getattr(isensus,ldap_warning)
+        assert instance(user) is None
+
+    # these warnings are supposed to return
+    # a warning message if ldap is True but not
+    # the other tested attribute.
+    user.ldap = True
+    for ldap_warning in ldap_warnings:
+        instance : isensus.IWarning = getattr(isensus,ldap_warning)
+        assert instance(user) is not None

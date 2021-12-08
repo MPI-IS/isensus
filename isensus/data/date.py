@@ -42,8 +42,13 @@ class Date:
         if self._date:
             return datetime.datetime.strftime(self._date, self.str_format)
         else:
-            return "Not set"
+            return "None"
 
+    def __bool__(self)->bool:
+        if self._date:
+            return True
+        return False
+        
     @classmethod
     def _from_string(cls, date: str) -> datetime.datetime:
         if date is None or not date:
