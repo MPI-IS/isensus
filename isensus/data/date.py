@@ -26,7 +26,7 @@ class Date:
 
     def __init__(self, date: str):
         if date:
-            self._date: datetime.datetime = self._from_string(date)
+            self._date: datetime.datetime = self.from_string(date)
         else:
             self._date = None
 
@@ -50,7 +50,7 @@ class Date:
         return False
         
     @classmethod
-    def _from_string(cls, date: str) -> datetime.datetime:
+    def from_string(cls, date: str) -> datetime.datetime:
         if date is None or not date:
             return None
         try:

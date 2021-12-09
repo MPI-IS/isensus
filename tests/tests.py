@@ -196,16 +196,17 @@ def test_date(test_data_file):
         user = isensus.User.find_user(users,"bmarley")
         assert str(user.contract_end) == right_format
 
-def test_bool_warnings():
+def test_ldap_bool_warnings():
 
     user : isensus.User = isensus.User.create_new("abob","anton","bob")
     
     ldap_warnings = (
-        "form_not_sent",
+        "forms_not_sent",
         "no_mail_account_or_forwarder",
         "no_title",
         "no_contract_type",
-        "no_contract_end"
+        "no_contract_end",
+        "no_mailing_list"
     )
 
     # these warnings are supposed to return None
@@ -222,3 +223,30 @@ def test_bool_warnings():
     for ldap_warning in ldap_warnings:
         instance : isensus.IWarning = getattr(isensus,ldap_warning)
         assert instance(user) is not None
+
+    # checking "cancelling" of each warning
+    user.forms_sent = True
+    assert isensus.forms_not_sent(user) is None
+    user.mail_account = True
+    assert isensus.no_mail_account_or_forwarder(user) is None
+    user.title = isensus.Title.master
+    assert isensus.no_title(user) is None
+    user.contract = isensus.Contract.normal
+    assert isensus.no_contract_type(user) is None
+    user.contract_end = isensus.Date.from_string("2099-01-01")
+    assert isensus.no_contract_end(user) is None
+    user.in_mailing_lists = True
+    assert isensus.no_mailing_list(user) is None
+
+def test_forms_received_bool_warnings():
+
+    user : isensus.User = isensus.User.create_new("abob","anton","bob")
+    
+    assert isensus.website_privacy_not_set(user) is None
+
+    user.forms_received = True
+    assert isensus.website_privacy_not_set(user) is not None
+
+    user.website_privacy = True
+    assert isensus.website_privacy_not_set(user) is None
+    
